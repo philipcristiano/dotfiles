@@ -23,3 +23,9 @@ setopt hist_ignore_space
 setopt autocd
 setopt extendedglob
 
+#Set title
+case $TERM in  
+    xterm*)
+        precmd () {print -Pn "\e]0;%n@%m: %~\a"}
+        ;;
+esac
