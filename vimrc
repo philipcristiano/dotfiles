@@ -10,3 +10,4 @@ set nospell
 
 colorscheme slate
 
+autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``
