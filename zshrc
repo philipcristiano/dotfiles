@@ -5,6 +5,9 @@ export PS1="%B[%~] %%%b "
 autoload -U compinit
 compinit
 
+#Nose Matching
+export NOSE_TESTMATCH="((?:^|[b_.-])(:?[Tt]est|When|should|[Dd]escribe))"
+
 # correction
 setopt correctall
 
