@@ -1,5 +1,6 @@
 # Created by newuser for 4.3.10
 
+export EDITOR=vim
 export PS1="%B[%~] %%%b "
 # completion
 autoload -U compinit
