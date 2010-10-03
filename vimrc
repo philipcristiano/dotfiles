@@ -3,6 +3,8 @@ set softtabstop=4
 set expandtab  
 set number
 set autoindent
+set incsearch
+set hlsearch
 autocmd FileType make setlocal noexpandtab
 setlocal spell spelllang=en_us
 set nospell
