@@ -1,7 +1,7 @@
 export EDITOR=vim
 #export PS1=$"%{\e[1;31m%}%B[%~] %%%b%{\e1;00m%}"
 
-export PROMPT=$'%{\e[1;31m%} %m %c %%%b% %{\e[1;00m%} '
+export PROMPT=$'%{\e[1;31m%}%m [%~] %%%b% %{\e[1;00m%} '
 
 # completion
 autoload -U compinit
