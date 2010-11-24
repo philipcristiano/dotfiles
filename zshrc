@@ -61,3 +61,4 @@ PR_NO_COLOUR="%{$terminfo[sgr0]%}"
 
 bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
+bindkey "^?" backward-delete-char # Sometimes OSX/SSH make things difficult
