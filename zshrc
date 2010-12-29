@@ -63,4 +63,4 @@ bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
 bindkey "^?" backward-delete-char # Sometimes OSX/SSH make things difficult
 
-alas svns="svn status | grep \"M|C\"
+alias svns="svn status | grep \"M|C\""
