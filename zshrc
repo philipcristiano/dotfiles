@@ -67,7 +67,6 @@ bindkey "^?" backward-delete-char # Sometimes OSX/SSH make things difficult
 
 alias svns="svn status | grep -v \"^[X|Performing|$]\""
 
-plugins=(vagrant)
 
 ###
 #
@@ -76,6 +75,9 @@ plugins=(vagrant)
 ###
 
 source ~/config/oh-my-zsh/plugins/vagrant/vagrant.plugin.zsh
+source ~/config/oh-my-zsh/plugins/pip/pip.plugin.zsh
+source ~/config/oh-my-zsh/plugins/git/git.plugin.zsh
+source ~/config/oh-my-zsh/plugins/macports/macports.plugin.zsh
 
 # Load all of the config files in ~/oh-my-zsh that end in .zsh
 # TIP: Add files you don't want in git to .gitignore
