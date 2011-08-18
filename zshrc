@@ -1,4 +1,4 @@
-export EDITOR=vim
+export EDITOR="mvim -v"
 export ZSH=~/config/oh-my-zsh
 #export PS1=$"%{\e[1;31m%}%B[%~] %%%b%{\e1;00m%}"
 
