@@ -4,6 +4,10 @@ export ZSH=~/config/oh-my-zsh
 
 export PROMPT=$'%{\e[1;31m%}%m [%~] %%%b% %{\e[1;00m%} '
 
+# alias
+alias va="source bin/activate"
+alias rake="noglob rake"
+
 # completion
 export FPATH=$FPATH:~/config/completions:$ZSH/functions
 autoload -U compinit
