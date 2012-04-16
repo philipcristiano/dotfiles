@@ -7,6 +7,8 @@ export PROMPT=$'%{\e[1;31m%}%m [%~] %%%b% %{\e[1;00m%} '
 # alias
 alias va="source bin/activate"
 alias rake="noglob rake"
+alias xcurl='curl -H Content-Type:\ application/json'
+alias dirsize='du -s * | sort -n | cut -f 2- | while read a; do du -hs "$a"; done;'
 
 # completion
 export FPATH=$FPATH:~/config/completions:$ZSH/functions
