@@ -9,6 +9,17 @@ alias va="source bin/activate"
 alias rake="noglob rake"
 alias xcurl='curl -H Content-Type:\ application/json'
 alias dirsize='du -s * | sort -n | cut -f 2- | while read a; do du -hs "$a"; done;'
+alias sg_clean_cache='rm -rf ~/Sites/tixcast/cache/*'
+alias listingfeed='cd ~/Sites/tixcast/services/listingfeed; source ~/Sites/tixcast/virtualenvs/listingfeed/bin/activate'
+alias api='cd ~/Sites/tixcast/services/api; source ~/Sites/tixcast/virtualenvs/api/bin/activate'
+alias santamaria='cd ~/Sites/tixcast/services/santamaria; source ~/Sites/tixcast/virtualenvs/santamaria/bin/activate'
+alias git merge='git merge --no-ff'
+
+
+function work_on {
+    ~/Sites/tixcast/services/$1
+    source ~/Sites/tixcast/virtualenvs/$1/bin/activate
+}
 
 # completion
 export FPATH=$FPATH:~/config/completions:$ZSH/functions
