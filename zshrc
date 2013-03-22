@@ -5,7 +5,7 @@ export CONFIG_DIR=~/config
 source $CONFIG_DIR/zsh/gitstatus.zsh
 #export PS1=$"%{\e[1;31m%}%B[%~] %%%b%{\e1;00m%}"
 
-export PROMPT=$'%{\e[1;31m%}%m $(git_super_status) %{\e[1;31m%}[%~] %%%b% %{\e[1;00m%} '
+export PROMPT=$'%{\e[1;31m%}%m $(git_super_status)[%~] %%%b% %{\e[1;00m%} '
 
 # alias
 alias va="source bin/activate"
