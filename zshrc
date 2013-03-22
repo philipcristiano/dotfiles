@@ -2,11 +2,14 @@ export EDITOR="mvim -v"
 export PATH="$(brew --prefix php54)/bin:$(brew --prefix rabbitmq)/sbin:$PATH"
 export ZSH=~/config/oh-my-zsh
 export SUPPRESS_GETEXL=True
+export CONFIG_DIR=~/config
+
+source $CONFIG_DIR/zsh/gitstatus.zsh
 #export PS1=$"%{\e[1;31m%}%B[%~] %%%b%{\e1;00m%}"
 #
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-export PROMPT=$'%{\e[1;31m%}%m [%~] %%%b% %{\e[1;00m%} '
+export PROMPT=$'%{\e[1;31m%}%m $(git_super_status)[%~] %%%b% %{\e[1;00m%} '
 
 # alias
 alias va="source bin/activate"
