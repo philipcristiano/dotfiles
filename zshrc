@@ -1,11 +1,16 @@
 export EDITOR="mvim -v"
+export PATH="$(brew --prefix php54)/bin:$(brew --prefix rabbitmq)/sbin:$PATH"
 export ZSH=~/config/oh-my-zsh
+export SUPPRESS_GETEXL=True
 #export PS1=$"%{\e[1;31m%}%B[%~] %%%b%{\e1;00m%}"
+#
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 export PROMPT=$'%{\e[1;31m%}%m [%~] %%%b% %{\e[1;00m%} '
 
 # alias
 alias va="source bin/activate"
+alias be="bundle exec"
 alias rake="noglob rake"
 alias xcurl='curl -H Content-Type:\ application/json'
 alias dirsize='du -s * | sort -n | cut -f 2- | while read a; do du -hs "$a"; done;'
@@ -14,11 +19,18 @@ alias listingfeed='cd ~/Sites/tixcast/services/listingfeed; source ~/Sites/tixca
 alias api='cd ~/Sites/tixcast/services/api; source ~/Sites/tixcast/virtualenvs/api/bin/activate'
 alias santamaria='cd ~/Sites/tixcast/services/santamaria; source ~/Sites/tixcast/virtualenvs/santamaria/bin/activate'
 alias git merge='git merge --no-ff'
+alias gmb='git checkout master && git merge --no-ff'
+alias pipir='pip install -r requirements.txt'
+alias grep='grep -irn'
 
 
 function work_on {
-    ~/Sites/tixcast/services/$1
-    source ~/Sites/tixcast/virtualenvs/$1/bin/activate
+  if [[ -d ~/gits/$1 ]]; then
+    cd ~/gits/$1
+  else
+    cd ~/Sites/tixcast/services/$1
+  fi
+  source ~/Sites/tixcast/virtualenvs/$1/bin/activate
 }
 
 # completion
