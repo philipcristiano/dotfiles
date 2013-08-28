@@ -1,0 +1,3 @@
+#compdef work_on
+
+_arguments "1: :(`ls ~/gits/ ~/gits/seatgeek/services`)"

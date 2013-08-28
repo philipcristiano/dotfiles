@@ -31,9 +31,17 @@ function work_on {
   if [[ -d ~/gits/$1 ]]; then
     cd ~/gits/$1
   else
-    cd ~/Sites/tixcast/services/$1
+    cd ~/gits/seatgeek/services/$1
   fi
-  source ~/Sites/tixcast/virtualenvs/$1/bin/activate
+  if [[ -d ~/virtualenvs/$1 ]]; then
+    source ~/virtualenvs/$1/bin/activate
+  else
+    virtualenv ~/virtualenvs/$1
+    source ~/virtualenvs/$1/bin/activate
+  fi
+  pipir
+}
+
 }
 
 # completion
