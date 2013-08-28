@@ -39,7 +39,9 @@ function work_on {
     virtualenv ~/virtualenvs/$1
     source ~/virtualenvs/$1/bin/activate
   fi
-  pipir
+  if [[ -a requirements.txt ]]; then
+    pipir
+  fi
 }
 
 }
