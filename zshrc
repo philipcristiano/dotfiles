@@ -37,7 +37,7 @@ function work_on {
 }
 
 # completion
-export FPATH=$FPATH:~/config/completions:$ZSH/functions
+export FPATH=$FPATH:~/dotfiles/completions:$ZSH/functions
 autoload -U compinit
 compinit
 
