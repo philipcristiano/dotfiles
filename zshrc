@@ -42,6 +42,9 @@ function work_on {
   if [[ -a requirements.txt ]]; then
     pipir
   fi
+  if [[ -a Gemfile ]]; then
+    bundle --path ~/.bundles/$1
+  fi
 }
 
 }
