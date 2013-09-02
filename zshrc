@@ -2,7 +2,7 @@ export EDITOR="mvim -v"
 export PATH="$(brew --prefix php54)/bin:$(brew --prefix rabbitmq)/sbin:$PATH"
 export ZSH=~/config/oh-my-zsh
 export SUPPRESS_GETEXL=True
-export CONFIG_DIR=~/config
+export CONFIG_DIR=~/dotfiles
 
 source $CONFIG_DIR/zsh/gitstatus.zsh
 #export PS1=$"%{\e[1;31m%}%B[%~] %%%b%{\e1;00m%}"
@@ -118,8 +118,8 @@ bindkey '^R' history-incremental-search-backward
 #
 ###
 
-source ~/config/oh-my-zsh/plugins/gem/gem.plugin.zsh
-source ~/config/oh-my-zsh/plugins/git/git.plugin.zsh
-source ~/config/oh-my-zsh/plugins/macports/macports.plugin.zsh
-source ~/config/oh-my-zsh/plugins/pip/pip.plugin.zsh
-source ~/config/oh-my-zsh/plugins/vagrant/vagrant.plugin.zsh
+source ~/dotfiles/oh-my-zsh/plugins/gem/gem.plugin.zsh
+source ~/dotfiles/oh-my-zsh/plugins/git/git.plugin.zsh
+source ~/dotfiles/oh-my-zsh/plugins/macports/macports.plugin.zsh
+source ~/dotfiles/oh-my-zsh/plugins/pip/pip.plugin.zsh
+source ~/dotfiles/oh-my-zsh/plugins/vagrant/vagrant.plugin.zsh
