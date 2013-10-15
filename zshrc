@@ -1,5 +1,5 @@
 export EDITOR="mvim -v"
-export PATH="$(brew --prefix php54)/bin:$(brew --prefix rabbitmq)/sbin:$PATH"
+export PATH="$(brew --prefix rabbitmq)/sbin:$PATH"
 export ZSH=~/config/oh-my-zsh
 export SUPPRESS_GETEXL=True
 export CONFIG_DIR=~/dotfiles
