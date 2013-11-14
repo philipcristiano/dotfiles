@@ -30,8 +30,6 @@ alias grep='grep -irn'
 function work_on {
   if [[ -d ~/gits/$1 ]]; then
     cd ~/gits/$1
-  else
-    cd ~/gits/seatgeek/services/$1
   fi
   if [[ -d ~/virtualenvs/$1 ]]; then
     source ~/virtualenvs/$1/bin/activate
