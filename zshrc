@@ -22,6 +22,7 @@ alias listingfeed='cd ~/Sites/tixcast/services/listingfeed; source ~/Sites/tixca
 alias api='cd ~/Sites/tixcast/services/api; source ~/Sites/tixcast/virtualenvs/api/bin/activate'
 alias santamaria='cd ~/Sites/tixcast/services/santamaria; source ~/Sites/tixcast/virtualenvs/santamaria/bin/activate'
 alias git merge='git merge --no-ff'
+alias git clean-merged-branches='git branch --merged master | \grep -v "master" | xargs -n 1 git branch -d'
 alias gmb='git checkout master && git merge --no-ff'
 alias pipir='pip install -r requirements.txt'
 alias grep='grep -irn'
