@@ -32,6 +32,12 @@ function work_on {
   if [[ -d ~/gits/$1 ]]; then
     cd ~/gits/$1
 
+    # source .env if it exists
+    if [ -r .env ]; then
+        echo $PWD/.env
+        source $PWD/.env
+    fi
+
     if [[ -a tox.ini ]]; then
         # Has a tox, we should install reqs with tox but not run tests
         tox --notest
