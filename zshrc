@@ -134,3 +134,7 @@ source ~/dotfiles/oh-my-zsh/plugins/git/git.plugin.zsh
 source ~/dotfiles/oh-my-zsh/plugins/macports/macports.plugin.zsh
 source ~/dotfiles/oh-my-zsh/plugins/pip/pip.plugin.zsh
 source ~/dotfiles/oh-my-zsh/plugins/vagrant/vagrant.plugin.zsh
+
+###
+# SSH
+ssh-add -A
