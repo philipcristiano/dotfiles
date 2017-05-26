@@ -1,4 +1,5 @@
 export EDITOR="mvim -v"
+export PATH="$(brew --prefix git)/bin:$(brew --prefix bash)/bin:$(brew --prefix make)/bin:$PATH"
 export ZSH=~/config/oh-my-zsh
 export SUPPRESS_GETEXL=True
 export CONFIG_DIR=~/dotfiles
