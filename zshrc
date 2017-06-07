@@ -43,26 +43,34 @@ function work_on {
         echo $PWD/.env
         source $PWD/.env
     fi
-
-    if [[ -a tox.ini ]]; then
-        # Has a tox, we should install reqs with tox but not run tests
-        tox --notest
-
-      else
-        # Setup a venv with requirements
-        if [[ -d ~/virtualenvs/$1 ]]; then
-          source ~/virtualenvs/$1/bin/activate
-        else
-          virtualenv ~/virtualenvs/$1
-          source ~/virtualenvs/$1/bin/activate
-        fi
-        if [[ -a requirements.txt ]]; then
-          pipir
-        fi
+    if [[ -a shell.nix ]]; then
+      # execute nix-shell and then start_dev
+      nix-shell --command "zsh -ic \"start_dev $1; zsh -i\""
+    else
+      start_dev "$1"
     fi
-    if [[ -a Gemfile ]]; then
-      bundle --path ~/.bundles/$1
-    fi
+  fi
+}
+
+function start_dev {
+  if [[ -a tox.ini ]]; then
+      # Has a tox, we should install reqs with tox but not run tests
+      tox --notest
+  else
+    # Setup a venv with requirements
+     if [[ -d ~/virtualenvs/$1 ]]; then
+       source ~/virtualenvs/$1/bin/activate
+     else
+       virtualenv ~/virtualenvs/$1
+       source ~/virtualenvs/$1/bin/activate
+     fi
+     if [[ -a requirements.txt ]]; then
+       pipir
+     fi
+  fi
+
+  if [[ -a Gemfile ]]; then
+    bundle --path ~/.bundles/$1
   fi
 }
 
@@ -143,4 +151,4 @@ source ~/dotfiles/oh-my-zsh/plugins/vagrant/vagrant.plugin.zsh
 
 ###
 # SSH
-ssh-add -A
+#ssh-add -A
