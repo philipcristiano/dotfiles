@@ -151,4 +151,17 @@ source ~/dotfiles/oh-my-zsh/plugins/vagrant/vagrant.plugin.zsh
 
 ###
 # SSH
-#ssh-add -A
+###
+
+# Add Keys if we don't have any
+if [[ $SHLVL == 1 ]]; then
+  ssh-add -l
+  RC=$?
+else
+  ssh-add -l > /dev/null
+  RC=$?
+fi
+
+if [[ $RC == 1 ]]; then
+  ssh-add -A
+fi
