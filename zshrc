@@ -4,8 +4,11 @@ export ZSH=~/config/oh-my-zsh
 export SUPPRESS_GETEXL=True
 export CONFIG_DIR=~/dotfiles
 
-# Add Nix
-source /Users/philipcristiano/.nix-profile/etc/profile.d/nix.sh
+# Add Nix only if we are not already in a nix sheel
+if [[ "$IN_NIX_SHELL" != 1 ]]
+then
+  source /Users/philipcristiano/.nix-profile/etc/profile.d/nix.sh
+fi
 
 source $CONFIG_DIR/zsh/gitstatus.zsh
 #export PS1=$"%{\e[1;31m%}%B[%~] %%%b%{\e1;00m%}"
