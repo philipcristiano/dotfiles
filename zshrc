@@ -15,7 +15,7 @@ source $CONFIG_DIR/zsh/gitstatus.zsh
 #
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-export PROMPT=$'%{\e[1;31m%}%m $(git_super_status)[%~] %%%b% %{\e[1;00m%} '
+export PROMPT=$'%{\e[1;31m%}%m $SHLVL $(git_super_status)[%~] %%%b% %{\e[1;00m%} '
 
 # alias
 alias va="source bin/activate"
