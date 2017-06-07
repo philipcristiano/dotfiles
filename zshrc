@@ -45,7 +45,7 @@ function work_on {
     fi
     if [[ -a shell.nix ]]; then
       # execute nix-shell and then start_dev
-      nix-shell --command "zsh -ic \"start_dev $1; zsh -i\""
+      nix-shell --run "zsh -ic \"start_dev $1; zsh -i\""
     else
       start_dev "$1"
     fi
