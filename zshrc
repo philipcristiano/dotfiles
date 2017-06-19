@@ -18,21 +18,10 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export PROMPT=$'%{\e[1;31m%}%m $SHLVL $(git_super_status)[%~] %%%b% %{\e[1;00m%} '
 
 # alias
-alias va="source bin/activate"
-alias be="bundle exec"
-alias rake="noglob rake"
-alias xcurl='curl -H Content-Type:\ application/json'
 alias dirsize='du -s * | sort -n | cut -f 2- | while read a; do du -hs "$a"; done;'
-alias sg_clean_cache='rm -rf ~/Sites/tixcast/cache/*'
-alias listingfeed='cd ~/Sites/tixcast/services/listingfeed; source ~/Sites/tixcast/virtualenvs/listingfeed/bin/activate'
-alias api='cd ~/Sites/tixcast/services/api; source ~/Sites/tixcast/virtualenvs/api/bin/activate'
-alias santamaria='cd ~/Sites/tixcast/services/santamaria; source ~/Sites/tixcast/virtualenvs/santamaria/bin/activate'
 alias git merge='git merge --no-ff'
 alias git clean-merged-branches='git branch --merged master | \grep -v "master" | xargs -n 1 git branch -d'
-alias gmb='git checkout master && git merge --no-ff'
-alias pipir='pip install -r requirements.txt'
 alias grep='grep -irn'
-
 
 function work_on {
   if [[ -d ~/gits/$1 ]]; then
