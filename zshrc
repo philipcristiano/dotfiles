@@ -4,7 +4,7 @@ export ZSH=~/config/oh-my-zsh
 export SUPPRESS_GETEXL=True
 export CONFIG_DIR=~/dotfiles
 
-# Add Nix only if we are not already in a nix sheel
+# Add Nix only if we are not already in a nix shell
 if [[ "$IN_NIX_SHELL" != 1 ]]
 then
   source /Users/philipcristiano/.nix-profile/etc/profile.d/nix.sh
