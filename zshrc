@@ -54,7 +54,7 @@ function start_dev {
        source ~/virtualenvs/$1/bin/activate
      fi
      if [[ -a requirements.txt ]]; then
-       pipir
+       pip install -r requirements.txt
      fi
   fi
 
