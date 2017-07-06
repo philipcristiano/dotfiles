@@ -61,6 +61,10 @@ function start_dev {
   if [[ -a Gemfile ]]; then
     bundle --path ~/.bundles/$1
   fi
+  if [ -r .env ]; then
+      echo $PWD/.env
+      source $PWD/.env
+  fi
 }
 
 # completion
