@@ -25,15 +25,16 @@ alias grep='grep -irn --color=auto'
 
 function work_on {
   if [[ -d ~/gits/$1 ]]; then
-    cd ~/gits/$1
+    WORK_DIR="${HOME}/gits/${1}"
+    cd "${WORK_DIR}"
 
     # source .env if it exists
-    if [ -r .env ]; then
-        echo $PWD/.env
-        source $PWD/.env
+    if [ -r "${WORK_DIR}/.env" ]; then
+        source "${WORK_DIR}/.env"
     fi
     if [[ -a shell.nix ]]; then
       # execute nix-shell and then start_dev
+      echo "Starting Nix Shell"
       nix-shell --run "zsh -ic \"start_dev $1; zsh -i\""
     else
       start_dev "$1"
@@ -61,9 +62,10 @@ function start_dev {
   if [[ -a Gemfile ]]; then
     bundle --path ~/.bundles/$1
   fi
-  if [ -r .env ]; then
-      echo $PWD/.env
-      source $PWD/.env
+  if [ -r ".env" ]; then
+      echo ".env"
+  else
+      echo ".env not found"
   fi
 }
 
