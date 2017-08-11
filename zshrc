@@ -21,7 +21,7 @@ export PROMPT=$'%{\e[1;31m%}%m $SHLVL $(git_super_status)[%~] %%%b% %{\e[1;00m%}
 alias dirsize='du -s * | sort -n | cut -f 2- | while read a; do du -hs "$a"; done;'
 alias git merge='git merge --no-ff'
 alias git clean-merged-branches='git branch --merged master | \grep -v "master" | xargs -n 1 git branch -d'
-alias grep='grep -irn'
+alias grep='grep -irn --color=auto'
 
 function work_on {
   if [[ -d ~/gits/$1 ]]; then
@@ -82,8 +82,6 @@ setopt correctall
 # prompt
 autoload -U promptinit
 promptinit
-
-export GREP_OPTIONS="--color=auto"
 
 export HISTSIZE=2000
 export HISTFILE="$HOME/.history"
