@@ -63,6 +63,7 @@ function start_dev {
   fi
   if [ -r ".env" ]; then
       echo ".env"
+      source ".env"
   else
       echo ".env not found"
   fi
