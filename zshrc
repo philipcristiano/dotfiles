@@ -1,4 +1,8 @@
-export EDITOR="mvim -v"
+if hash mvim 2>/dev/null; then
+    export EDITOR="mvim -v"
+else
+    export EDITOR="vim"
+fi
 export ZSH=~/config/oh-my-zsh
 export SUPPRESS_GETEXL=True
 export CONFIG_DIR=~/dotfiles
