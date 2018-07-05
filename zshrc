@@ -7,6 +7,14 @@ export ZSH=~/config/oh-my-zsh
 export SUPPRESS_GETEXL=True
 export CONFIG_DIR=~/dotfiles
 
+export PATH="/home/$USER/bin:$PATH"
+
+# Source bash profile if available
+
+if [[ -a /etc/profile ]]; then
+  source /etc/profile
+fi
+
 # Add Nix only if we are not already in a nix shell
 if [[ "$IN_NIX_SHELL" != 1 ]]
 then
