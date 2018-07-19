@@ -1,8 +1,3 @@
-if hash mvim 2>/dev/null; then
-    export EDITOR="mvim -v"
-else
-    export EDITOR="vim"
-fi
 export ZSH=~/config/oh-my-zsh
 export SUPPRESS_GETEXL=True
 export CONFIG_DIR=~/dotfiles
@@ -16,9 +11,16 @@ if [[ -a /etc/profile ]]; then
 fi
 
 # Add Nix only if we are not already in a nix shell
-if [[ "$IN_NIX_SHELL" != 1 ]]
-then
-  source /Users/philipcristiano/.nix-profile/etc/profile.d/nix.sh
+if [[ "$IN_NIX_SHELL" != 1 ]]; then
+    if [[ -a /Users/philipcristiano/.nix-profile/etc/profile.d/nix.sh ]]; then
+        source /Users/philipcristiano/.nix-profile/etc/profile.d/nix.sh
+    fi
+fi
+
+if hash mvim 2>/dev/null; then
+    export EDITOR="mvim -v"
+else
+    export EDITOR="vim"
 fi
 
 source $CONFIG_DIR/zsh/gitstatus.zsh
