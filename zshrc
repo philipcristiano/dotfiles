@@ -2,7 +2,7 @@ export ZSH=~/config/oh-my-zsh
 export SUPPRESS_GETEXL=True
 export CONFIG_DIR=~/dotfiles
 
-export PATH="/home/$USER/bin:$PATH"
+export PATH="/Applications/MacVim.app/Contents/bin:/home/$USER/bin:$PATH"
 
 # Source bash profile if available
 
