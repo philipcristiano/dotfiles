@@ -155,22 +155,3 @@ source ~/dotfiles/oh-my-zsh/plugins/git/git.plugin.zsh
 source ~/dotfiles/oh-my-zsh/plugins/macports/macports.plugin.zsh
 source ~/dotfiles/oh-my-zsh/plugins/pip/pip.plugin.zsh
 source ~/dotfiles/oh-my-zsh/plugins/vagrant/vagrant.plugin.zsh
-
-###
-# SSH
-###
-
-# Add Keys if we don't have any
-if [[ $(uname) == 'Darwin' ]]; then
-  if [[ $SHLVL == 1 ]]; then
-    ssh-add -l
-    RC=$?
-  else
-    ssh-add -l > /dev/null
-    RC=$?
-  fi
-
-  if [[ $RC == 1 ]]; then
-    ssh-add -A
-  fi
-fi

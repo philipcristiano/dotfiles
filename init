@@ -1,3 +1,4 @@
 cp zshrc ~/.zshrc
 cp gitconfig ~/.gitconfig
 
+ssh-add -K
