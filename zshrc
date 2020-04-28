@@ -61,25 +61,6 @@ function work_on {
 }
 
 function start_dev {
-  if [[ -a tox.ini ]]; then
-      # Has a tox, we should install reqs with tox but not run tests
-      tox --notest
-  else
-    # Setup a venv with requirements
-     if [[ -d ~/virtualenvs/$1 ]]; then
-       source ~/virtualenvs/$1/bin/activate
-     else
-       virtualenv ~/virtualenvs/$1
-       source ~/virtualenvs/$1/bin/activate
-     fi
-     if [[ -a requirements.txt ]]; then
-       pip install -r requirements.txt
-     fi
-  fi
-
-  if [[ -a Gemfile ]]; then
-    bundle --path ~/.bundles/$1
-  fi
   if [ -r ".env" ]; then
       echo ".env"
       source ".env"
