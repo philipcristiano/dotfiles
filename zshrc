@@ -95,7 +95,7 @@ compinit
 
 #Nose Matching
 export NOSE_TESTMATCH="((?:^|[b_.-])(:?[Tt]est|When|should|[Dd]escribe))"
-export CDPATH="$CDPATH:~:~/gits:~/svn:~/svn/packages"
+export CDPATH="$CDPATH:~:~/gits"
 
 # correction
 setopt correctall
