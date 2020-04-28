@@ -23,12 +23,17 @@ else
     export EDITOR="vim"
 fi
 
-source $CONFIG_DIR/zsh/gitstatus.zsh
-#export PS1=$"%{\e[1;31m%}%B[%~] %%%b%{\e1;00m%}"
-#
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+## Allow dynamic prompts
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
+RPROMPT=\$vcs_info_msg_0_
+zstyle ':vcs_info:git:*' formats '%F{240}(%b)%r%f'
+zstyle ':vcs_info:*' enable git
 
-export PROMPT=$'%{\e[1;31m%}%m $SHLVL $(git_super_status)[%~] %%%b% %{\e[1;00m%} '
+# Set the prompt formatting
+export PROMPT=$'%{\e[1;31m%}%m $SHLVL [%~] %%%b% %{\e[1;00m%} '
 
 # alias
 alias dirsize='du -s * | sort -n | cut -f 2- | while read a; do du -hs "$a"; done;'
