@@ -2,19 +2,14 @@ export ZSH=~/config/oh-my-zsh
 export SUPPRESS_GETEXL=True
 export CONFIG_DIR=~/dotfiles
 
-export PATH="/Applications/MacVim.app/Contents/bin:/home/$USER/bin:$PATH"
 
-# Source bash profile if available
-
-if [[ -a /etc/profile ]]; then
-  source /etc/profile
-fi
-
-# Add Nix only if we are not already in a nix shell
+# Add things if we are not already in a nix shell
 if [[ "$IN_NIX_SHELL" != 1 ]]; then
     if [[ -a /Users/philipcristiano/.nix-profile/etc/profile.d/nix.sh ]]; then
         source /Users/philipcristiano/.nix-profile/etc/profile.d/nix.sh
     fi
+
+    export PATH="/Applications/MacVim.app/Contents/bin:/home/$USER/bin:$PATH"
 fi
 
 if hash mvim 2>/dev/null; then
