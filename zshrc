@@ -74,10 +74,6 @@ export FPATH=$FPATH:~/dotfiles/completions:$ZSH/functions
 autoload -U compinit
 compinit
 
-#Nose Matching
-export NOSE_TESTMATCH="((?:^|[b_.-])(:?[Tt]est|When|should|[Dd]escribe))"
-export CDPATH="$CDPATH:~:~/gits"
-
 # correction
 setopt correctall
 
@@ -128,10 +124,3 @@ bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
 bindkey "^?" backward-delete-char # Sometimes OSX/SSH make things difficult
 bindkey '^R' history-incremental-search-backward
-
-
-###
-#
-# oh-my-zshell
-#
-###
