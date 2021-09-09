@@ -4,7 +4,10 @@ export CONFIG_DIR=~/dotfiles
 
 
 # Add things if we are not already in a nix shell
-if [[ "$IN_NIX_SHELL" != 1 ]]; then
+if [[ -v IN_NIX_SHELL ]]; then
+    # Seems like we're in a nix shell
+else
+    # Seems we are not in a nix shell
     if [[ -a /Users/philipcristiano/.nix-profile/etc/profile.d/nix.sh ]]; then
         source /Users/philipcristiano/.nix-profile/etc/profile.d/nix.sh
     fi
@@ -16,11 +19,6 @@ if hash mvim 2>/dev/null; then
     export EDITOR="mvim -v"
 else
     export EDITOR="vim"
-fi
-
-if [ -r ".env" ]; then
-  echo ".env"
-  source ".env"
 fi
 
 ## Allow dynamic prompts
