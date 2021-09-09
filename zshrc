@@ -18,6 +18,11 @@ else
     export EDITOR="vim"
 fi
 
+if [ -r ".env" ]; then
+  echo ".env"
+  source ".env"
+fi
+
 ## Allow dynamic prompts
 autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
@@ -48,9 +53,9 @@ function work_on {
     if [[ -a shell.nix ]]; then
       # execute nix-shell and then start_dev
       echo "Starting Nix Shell"
-      nix-shell --run "zsh -ic \"start_dev $1; zsh -i\""
+      nix-shell --run "zsh -i"
     else
-      start_dev "$1"
+      start_dev
     fi
   fi
 }
