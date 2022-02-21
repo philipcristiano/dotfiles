@@ -11,6 +11,11 @@ else
     if [[ -a /Users/philipcristiano/.nix-profile/etc/profile.d/nix.sh ]]; then
         source /Users/philipcristiano/.nix-profile/etc/profile.d/nix.sh
     fi
+    # Nix
+    if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+    . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+    fi
+    # End Nix
 
     export PATH="/Applications/MacVim.app/Contents/bin:/home/$USER/bin:$PATH"
 fi
