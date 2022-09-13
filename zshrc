@@ -2,14 +2,15 @@ export ZSH=~/config/oh-my-zsh
 export SUPPRESS_GETEXL=True
 export CONFIG_DIR=~/dotfiles
 
+ssh-add --apple-use-keychain
 
 # Add things if we are not already in a nix shell
 if [[ -v IN_NIX_SHELL ]]; then
     # Seems like we're in a nix shell
 else
     # Seems we are not in a nix shell
-    if [[ -a /Users/philipcristiano/.nix-profile/etc/profile.d/nix.sh ]]; then
-        source /Users/philipcristiano/.nix-profile/etc/profile.d/nix.sh
+    if [[ -a /Users/$USER/.nix-profile/etc/profile.d/nix.sh ]]; then
+        source /Users/$USER/.nix-profile/etc/profile.d/nix.sh
     fi
     # Nix
     if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
