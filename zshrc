@@ -50,11 +50,9 @@ function work_on {
     WORK_DIR="${HOME}/gits/${1}"
     cd "${WORK_DIR}"
 
-    # source .env if it exists
-    if [ -r "${WORK_DIR}/.env" ]; then
-        source "${WORK_DIR}/.env"
-    fi
-    if [[ -a shell.nix ]]; then
+    if [[ -a flake.nix ]]; then
+      nix develop
+    elif [[ -a shell.nix ]]; then
       # execute nix-shell and then start_dev
       echo "Starting Nix Shell"
       nix-shell --run "zsh -i"
