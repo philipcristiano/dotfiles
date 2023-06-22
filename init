@@ -1,4 +1,7 @@
 cp zshrc ~/.zshrc
 cp gitconfig ~/.gitconfig
 
-ssh-add -K
+mkdir -p ~/.config/nix
+cp nix.conf ~/.config/nix/nix.conf
+
+ssh-add --apple-use-keychain
